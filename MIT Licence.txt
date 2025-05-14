@@ -1,0 +1,23 @@
+# Simulador Contable & Científico - wepatike Pro
+
+## Descripción
+
+Este proyecto es un **Simulador Contable & Científico** creado por **wepatike**. Permite registrar y calcular asientos contables, generar estados financieros, así como realizar operaciones matemáticas complejas.
+
+## Funcionalidades
+
+- **Asientos de Diario**: Registrar transacciones contables.
+- **Mayor General**: Visualizar la acumulación por cuenta.
+- **Balanza de Comprobación**: Verificación de saldos antes y después de los ajustes.
+- **Calculadora Científica**: Realizar cálculos matemáticos, incluyendo logaritmos y funciones trigonométricas.
+
+## Cómo usar
+
+1. Descarga o clona el repositorio.
+2. Abre `index.html` en tu navegador.
+3. Usa las funcionalidades de la calculadora contable y científica.
+4. ¡Diviértete!
+
+## License
+
+MIT License

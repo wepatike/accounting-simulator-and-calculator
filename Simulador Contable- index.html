@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>wepatike | Simulador Contable</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>💼 Simulador Contable - wepatike</h1>
+
+  <section>
+    <h2>📘 Asiento Diario</h2>
+    <form id="form-diario">
+      <input type="date" id="fecha" required />
+      <input type="text" id="cuenta" placeholder="Cuenta" required />
+      <input type="number" id="debe" placeholder="Debe" step="0.01" />
+      <input type="number" id="haber" placeholder="Haber" step="0.01" />
+      <button type="submit">Agregar</button>
+    </form>
+    <table id="tabla-diario">
+      <thead>
+        <tr><th>Fecha</th><th>Cuenta</th><th>Debe</th><th>Haber</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>📊 Mayor General</h2>
+    <table id="tabla-mayor">
+      <thead>
+        <tr><th>Cuenta</th><th>Debe</th><th>Haber</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>✅ Balanza de Comprobación</h2>
+    <table id="tabla-balanza">
+      <thead>
+        <tr><th>Cuenta</th><th>Debe</th><th>Haber</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>🧮 Calculadora Matemática</h2>
+    <input type="text" id="calc-input" readonly />
+    <div class="calc-buttons">
+      <button onclick="appendCalc('7')">7</button>
+      <button onclick="appendCalc('8')">8</button>
+      <button onclick="appendCalc('9')">9</button>
+      <button onclick="appendCalc('+')">+</button>
+      <button onclick="appendCalc('4')">4</button>
+      <button onclick="appendCalc('5')">5</button>
+      <button onclick="appendCalc('6')">6</button>
+      <button onclick="appendCalc('-')">-</button>
+      <button onclick="appendCalc('1')">1</button>
+      <button onclick="appendCalc('2')">2</button>
+      <button onclick="appendCalc('3')">3</button>
+      <button onclick="appendCalc('*')">*</button>
+      <button onclick="appendCalc('0')">0</button>
+      <button onclick="appendCalc('/')">/</button>
+      <button onclick="appendCalc('Math.log(')">log</button>
+      <button onclick="appendCalc('Math.sqrt(')">√</button>
+      <button onclick="calculate()">=</button>
+      <button onclick="clearCalc()">C</button>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

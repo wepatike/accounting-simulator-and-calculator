@@ -1,0 +1,92 @@
+// Función para mostrar las secciones correspondientes al hacer clic en los botones del menú
+function showSection(sectionId) {
+  // Ocultamos todas las secciones
+  const sections = document.querySelectorAll("section");
+  sections.forEach(section => {
+    section.classList.add("hidden");  // Ocultamos todas las secciones
+    section.style.animation = "fadeOut 0.5s ease-out";  // Animación de ocultado
+  });
+
+  // Mostramos la sección seleccionada
+  const activeSection = document.getElementById(sectionId);
+  if (activeSection) {
+    activeSection.classList.remove("hidden");  // Mostramos la sección seleccionada
+    activeSection.style.animation = "fadeInUp 1.5s ease-out";  // Animación de aparición
+  }
+}
+
+// Función para agregar los asientos de diario
+const formDiario = document.getElementById("form-diario");
+const tablaDiario = document.getElementById("tabla-diario").getElementsByTagName('tbody')[0];
+
+formDiario.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const fecha = formDiario[0].value;
+  const cuenta = formDiario[1].value;
+  const debe = parseFloat(formDiario[2].value) || 0;
+  const haber = parseFloat(formDiario[3].value) || 0;
+
+  // Crear una nueva fila en la tabla de asientos de diario
+  const row = tablaDiario.insertRow();
+  row.insertCell(0).textContent = fecha;
+  row.insertCell(1).textContent = cuenta;
+  row.insertCell(2).textContent = debe.toFixed(2);
+  row.insertCell(3).textContent = haber.toFixed(2);
+
+  // Limpiar los campos del formulario
+  formDiario.reset();
+
+  // Mostrar mensaje de éxito con animación
+  alert("Asiento agregado correctamente!");
+});
+
+// Función para manejar la calculadora científica
+let calcInput = document.getElementById("calc-input");
+
+function appendCalc(value) {
+  calcInput.value += value;
+  calcInput.style.animation = "inputAnimation 0.5s ease-in-out";  // Animación de input
+}
+
+function calculate() {
+  try {
+    // Evaluamos la expresión matemática que el usuario ingresó
+    calcInput.value = eval(calcInput.value);
+    calcInput.style.animation = "inputAnimation 0.5s ease-in-out";  // Animación de resultado
+  } catch (error) {
+    calcInput.value = "Error";
+    calcInput.style.animation = "errorAnimation 0.5s ease-in-out";  // Animación de error
+  }
+}
+
+function clearCalc() {
+  calcInput.value = '';
+  calcInput.style.animation = "inputAnimation 0.5s ease-in-out";  // Animación de borrado
+}
+
+// Función para manejar la visualización de la tabla del Mayor General
+const tablaMayor = document.getElementById("tabla-mayor").getElementsByTagName('tbody')[0];
+
+function agregarMayor(cuenta, debe, haber) {
+  // Crear una nueva fila en la tabla del Mayor General
+  const row = tablaMayor.insertRow();
+  row.insertCell(0).textContent = cuenta;
+  row.insertCell(1).textContent = debe.toFixed(2);
+  row.insertCell(2).textContent = haber.toFixed(2);
+}
+
+// Función para manejar la visualización de la Balanza de Comprobación
+const tablaBalanza = document.getElementById("tabla-balanza").getElementsByTagName('tbody')[0];
+
+function agregarBalanza(cuenta, debe, haber) {
+  // Crear una nueva fila en la tabla de la Balanza de Comprobación
+  const row = tablaBalanza.insertRow();
+  row.insertCell(0).textContent = cuenta;
+  row.insertCell(1).textContent = debe.toFixed(2);
+  row.insertCell(2).textContent = haber.toFixed(2);
+}
+
+// Función que permite realizar un asiento de diario y actualizar el Mayor General y Balanza de Comprobación
+function realizarAs
+cr
